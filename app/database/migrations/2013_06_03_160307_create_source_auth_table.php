@@ -14,7 +14,9 @@ class CreateSourceAuthTable extends Migration {
 	{
 		Schema::create('source_auth', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->integer('user_id');
+			$table->integer('source_id');
+			$table->string('auth_key');
 			$table->timestamps();
 		});
 	}

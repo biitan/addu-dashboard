@@ -15,6 +15,10 @@ class CreateSourcesTable extends Migration {
 		Schema::create('sources', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('src_name');
+			$table->string('src_description');
+			$table->string('src_auth_type');
+			$table->string('src_status');
 			$table->timestamps();
 		});
 	}
