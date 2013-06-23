@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateSourcesTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('sources', function(Blueprint $table)
+	    {
+	        $table->increments('id');
+	        $table->string('src_name');
+	        $table->string('src_description');
+	        $table->string('src_auth_type');
+	        $table->string('src_status');
+	        $table->timestamps();
+	    });
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('sources');
+	}
+
+}
